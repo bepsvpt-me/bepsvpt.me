@@ -11,9 +11,7 @@ html, body, #__bepsvpt, #__layout {
 }
 
 html {
-  @apply text-base;
-  @apply antialiased;
-  @apply font-normal;
+  @apply text-base antialiased font-normal;
   @apply bg-gray-100;
 }
 
@@ -23,4 +21,8 @@ ul, ol {
 
 h2 {
   @apply text-xl;
+}
+
+button {
+  @apply py-1 px-3 rounded;
 }
