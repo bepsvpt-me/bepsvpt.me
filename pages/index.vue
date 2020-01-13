@@ -23,7 +23,13 @@
           v-text="'Show'"
         />
 
-        <p v-else v-text="email" />
+        <input
+          v-else
+          class="block bg-white focus:shadow-outline border border-gray-300 rounded-lg px-2 py-1"
+          readonly
+          :value="email"
+          @focus="$event.target.select()"
+        />
 
         <h2 class="mt-4">Links</h2>
 
