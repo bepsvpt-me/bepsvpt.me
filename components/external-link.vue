@@ -1,6 +1,6 @@
 <template>
   <a
-    class="text-blue-500"
+    class="text-blue-700"
     :href="href"
     referrerpolicy="same-origin"
     rel="noopener"
