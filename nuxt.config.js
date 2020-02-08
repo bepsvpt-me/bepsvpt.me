@@ -48,6 +48,10 @@ export default {
 
   // https://nuxtjs.org/api/configuration-head
   head: {
+    htmlAttrs: {
+      lang: 'en-US'
+    },
+
     title: 'bepsvpt',
 
     meta: [
