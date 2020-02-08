@@ -11,18 +11,25 @@ html, body, #__bepsvpt, #__layout {
 }
 
 html {
-  @apply text-base antialiased font-normal;
-  @apply bg-gray-100;
+  @apply text-lg leading-loose antialiased font-normal;
+  @apply bg-gray-200;
 }
 
 ul, ol {
   @apply pl-4;
 }
 
+h1 {
+  @apply text-4xl;
+}
+
 h2 {
-  @apply text-xl;
+  @apply text-2xl;
 }
 
 button {
-  @apply py-1 px-3 rounded;
+  @apply px-3 rounded;
+
+  padding-top: 0.05rem;
+  padding-bottom: 0.05rem;
 }
