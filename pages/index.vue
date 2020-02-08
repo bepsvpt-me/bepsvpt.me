@@ -3,56 +3,46 @@
     <section>
       <embedded-image
         alt="logo"
-        class="inline-block"
+        class="inline-block w-full md:w-64"
         :origin="require('~/assets/img/logo.jpg')"
         :src="require('~/assets/img/logo.webp')"
-        width="256"
       />
 
       <div class="sm:ml-4 sm:inline-block align-top">
-        <h2>Nickname</h2>
+        <h1>bepsvpt</h1>
 
-        <p>bepsvpt</p>
+        <h2>Email</h2>
 
-        <h2 class="mt-3">Email</h2>
+        <hidden-info :value="email" />
 
-        <button
-          v-if="!emailVisible"
-          class="email-button"
-          @click="emailVisible = true"
-          v-text="'Show'"
-        />
+        <h2 class="mt-2">Riot(Matrix)</h2>
 
-        <input
-          v-else
-          class="block bg-white focus:shadow-outline border border-gray-300 rounded-lg px-2 py-1"
-          readonly
-          :value="email"
-          @focus="$event.target.select()"
-        />
-
-        <h2 class="mt-4">Links</h2>
-
-        <links-list :items="links" />
+        <hidden-info :value="riot" />
       </div>
     </section>
 
-    <hr class="mt-4" />
+    <hr class="mt-2" />
 
     <section class="whitespace-no-wrap">
-      <div class="three-columns">
+      <div class="four-columns">
+        <h2>Links</h2>
+
+        <links-list :items="links" />
+      </div>
+
+      <div class="four-columns">
         <h2>Projects</h2>
 
         <links-list :items="projects" />
       </div>
 
-      <div class="three-columns">
+      <div class="four-columns">
         <h2>Packages</h2>
 
         <links-list :items="packages" />
       </div>
 
-      <div class="three-columns">
+      <div class="four-columns">
         <h2>Experiments</h2>
 
         <links-list :items="experiments" />
@@ -63,19 +53,21 @@
 
 <script>
 import EmbeddedImage from '~/components/embedded-image.vue'
+import HiddenInfo from '~/components/hidden-info.vue'
 import LinksList from '~/components/links-list.vue'
 
 export default {
   components: {
     EmbeddedImage,
+    HiddenInfo,
     LinksList
   },
 
   data() {
     return {
-      email: 'nsevd0ub6rqvkhu@infinitefa.email',
+      email: 'hello@infinitefa.email',
 
-      emailVisible: false,
+      riot: '@me3rmzhwpfol1rh:matrix.bepsvpt.me:443',
 
       links: [
         {
@@ -96,6 +88,10 @@ export default {
         {
           to: 'https://laravel.bepsvpt.me',
           text: 'Top Laravel Packages'
+        },
+        {
+          to: 'https://youtuber.bepsvpt.me',
+          text: 'YouTuber Statistics'
         }
       ],
 
@@ -122,24 +118,16 @@ export default {
 </script>
 
 <style scoped>
-.email-button {
-  @apply bg-gray-400;
-}
-
-.email-button:hover {
-  @apply bg-gray-600 text-gray-100;
-}
-
-.three-columns {
-  @apply mt-3;
+.four-columns {
+  @apply mt-2;
   @apply whitespace-normal;
 }
 
 @screen md {
-  .three-columns {
+  .four-columns {
     @apply inline-block;
     @apply align-top;
-    @apply w-1/3;
+    @apply w-1/4;
   }
 }
 </style>
