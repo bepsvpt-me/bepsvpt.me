@@ -92,6 +92,10 @@ export default {
         {
           to: 'https://youtuber.bepsvpt.me',
           text: 'YouTuber Statistics'
+        },
+        {
+          to: 'https://bookwalker.bepsvpt.me',
+          text: 'BookWalker Searcher'
         }
       ],
 
