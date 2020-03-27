@@ -23,30 +23,14 @@
 
     <hr class="mt-2" />
 
-    <section class="whitespace-no-wrap">
-      <div class="four-columns">
-        <h2>Links</h2>
+    <section>
+      <article v-for="group in groups" :key="group.key" class="mb-1">
+        <h2 v-text="group.name" />
 
-        <links-list :items="links" />
-      </div>
+        <hr />
 
-      <div class="four-columns">
-        <h2>Projects</h2>
-
-        <links-list :items="projects" />
-      </div>
-
-      <div class="four-columns">
-        <h2>Packages</h2>
-
-        <links-list :items="packages" />
-      </div>
-
-      <div class="four-columns">
-        <h2>Experiments</h2>
-
-        <links-list :items="experiments" />
-      </div>
+        <links-list :items="$data[group.key]" />
+      </article>
     </section>
   </main>
 </template>
@@ -69,6 +53,13 @@ export default {
 
       riot: '@me3rmzhwpfol1rh:matrix.bepsvpt.me:443',
 
+      groups: [
+        { name: 'Links', key: 'links' },
+        { name: 'Project Sites', key: 'projects' },
+        { name: 'Packages', key: 'packages' },
+        { name: 'Experiments', key: 'experiments' }
+      ],
+
       links: [
         {
           to: 'https://blog.bepsvpt.me',
@@ -83,55 +74,47 @@ export default {
       projects: [
         {
           to: 'https://ccu.plus',
-          text: 'CCU PLUS'
+          text: 'CCU PLUS',
+          description: 'Course review for National Chung Cheng University.'
         },
         {
           to: 'https://laravel.bepsvpt.me',
-          text: 'Top Laravel Packages'
+          text: 'Top Laravel Packages',
+          description: ' List top 1,000 downloads Laravel packages.'
         },
         {
           to: 'https://youtuber.bepsvpt.me',
-          text: 'YouTuber Statistics'
+          text: 'YouTuber Statistics',
+          description: 'Track YouTuber channel and video statistics.'
         },
         {
           to: 'https://bookwalker.bepsvpt.me',
-          text: 'BookWalker Searcher'
+          text: 'BookWalker Searcher',
+          description: 'Taiwan BOOK☆WALKER search tool.'
         }
       ],
 
       packages: [
         {
           to: 'https://github.com/bepsvpt/secure-headers',
-          text: 'PHP Secure Headers'
+          text: 'PHP Secure Headers',
+          description: 'Add security related headers to HTTP response.'
         }
       ],
 
       experiments: [
         {
           to: 'https://github.com/bepsvpt/homebrew-updater',
-          text: 'Homebrew Updater'
+          text: 'Homebrew Updater',
+          description: 'Automatically check release of Homebrew formulas.'
         },
         {
           to: 'https://github.com/bepsvpt/remote-browser',
-          text: 'Remote Browser'
+          text: 'Remote Browser',
+          description: 'Use WebRTC to stream remote server puppeteer.'
         }
       ]
     }
   }
 }
 </script>
-
-<style scoped>
-.four-columns {
-  @apply mt-2;
-  @apply whitespace-normal;
-}
-
-@screen md {
-  .four-columns {
-    @apply inline-block;
-    @apply align-top;
-    @apply w-1/4;
-  }
-}
-</style>
