@@ -22,39 +22,39 @@ export default {
   props: {
     alt: {
       default: `image-${+new Date()}`,
-      type: String
+      type: String,
     },
 
     height: {
       default: undefined,
-      type: [Number, String]
+      type: [Number, String],
     },
 
     src: {
       required: true,
-      type: String
+      type: String,
     },
 
     type: {
       default: 'image/webp',
-      type: String
+      type: String,
     },
 
     origin: {
       default: null,
-      type: String
+      type: String,
     },
 
     width: {
       default: undefined,
-      type: [Number, String]
-    }
+      type: [Number, String],
+    },
   },
 
   computed: {
     fallback() {
       return this.origin || this.src
-    }
-  }
+    },
+  },
 }
 </script>

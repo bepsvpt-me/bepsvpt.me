@@ -44,7 +44,7 @@ export default {
   components: {
     EmbeddedImage,
     HiddenInfo,
-    LinksList
+    LinksList,
   },
 
   data() {
@@ -57,64 +57,64 @@ export default {
         { name: 'Links', key: 'links' },
         { name: 'Project Sites', key: 'projects' },
         { name: 'Packages', key: 'packages' },
-        { name: 'Experiments', key: 'experiments' }
+        { name: 'Experiments', key: 'experiments' },
       ],
 
       links: [
         {
           to: 'https://blog.bepsvpt.me',
-          text: 'Blog'
+          text: 'Blog',
         },
         {
           to: 'https://github.com/bepsvpt',
-          text: 'GitHub'
-        }
+          text: 'GitHub',
+        },
       ],
 
       projects: [
         {
           to: 'https://ccu.plus',
           text: 'CCU PLUS',
-          description: 'Course review for National Chung Cheng University.'
+          description: 'Course review for National Chung Cheng University.',
         },
         {
           to: 'https://laravel.bepsvpt.me',
           text: 'Top Laravel Packages',
-          description: ' List top 1,000 downloads Laravel packages.'
+          description: ' List top 1,000 downloads Laravel packages.',
         },
         {
           to: 'https://youtuber.bepsvpt.me',
           text: 'YouTuber Statistics',
-          description: 'Track YouTuber channel and video statistics.'
+          description: 'Track YouTuber channel and video statistics.',
         },
         {
           to: 'https://bookwalker.bepsvpt.me',
           text: 'BookWalker Searcher',
-          description: 'Taiwan BOOK☆WALKER search tool.'
-        }
+          description: 'Taiwan BOOK☆WALKER search tool.',
+        },
       ],
 
       packages: [
         {
           to: 'https://github.com/bepsvpt/secure-headers',
           text: 'PHP Secure Headers',
-          description: 'Add security related headers to HTTP response.'
-        }
+          description: 'Add security related headers to HTTP response.',
+        },
       ],
 
       experiments: [
         {
           to: 'https://github.com/bepsvpt/homebrew-updater',
           text: 'Homebrew Updater',
-          description: 'Automatically check release of Homebrew formulas.'
+          description: 'Automatically check release of Homebrew formulas.',
         },
         {
           to: 'https://github.com/bepsvpt/remote-browser',
           text: 'Remote Browser',
-          description: 'Use WebRTC to stream remote server puppeteer.'
-        }
-      ]
+          description: 'Use WebRTC to stream remote server puppeteer.',
+        },
+      ],
     }
-  }
+  },
 }
 </script>

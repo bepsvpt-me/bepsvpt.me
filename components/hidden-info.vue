@@ -9,14 +9,14 @@ export default {
   props: {
     value: {
       required: true,
-      type: String
-    }
+      type: String,
+    },
   },
 
   data() {
     return {
       text: 'Show',
-      visible: false
+      visible: false,
     }
   },
 
@@ -25,8 +25,8 @@ export default {
       requestAnimationFrame(() => {
         target.setSelectionRange(0, this.value.length)
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -16,19 +16,19 @@ export default {
   props: {
     href: {
       required: true,
-      type: String
+      type: String,
     },
 
     target: {
       default: '_self',
       type: String,
-      validator: (value) => ['_self', '_blank'].includes(value)
+      validator: (value) => ['_self', '_blank'].includes(value),
     },
 
     text: {
       default: () => this.href,
-      type: String
-    }
-  }
+      type: String,
+    },
+  },
 }
 </script>

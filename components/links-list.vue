@@ -18,14 +18,14 @@ export default {
   name: 'LinksList',
 
   components: {
-    ExternalLink
+    ExternalLink,
   },
 
   props: {
     items: {
       required: true,
-      type: Array
-    }
-  }
+      type: Array,
+    },
+  },
 }
 </script>
