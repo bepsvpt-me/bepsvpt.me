@@ -1,11 +1,17 @@
 export default {
-  mode: 'universal',
+  mode: 'spa',
 
   // https://nuxtjs.org/api/configuration-global-name
   globalName: 'bepsvpt',
 
   // https://nuxtjs.org/api/configuration-build
   build: {
+    babel: {
+      presets(_, [_preset, options]) {
+        options.corejs = { version: 3 }
+      },
+    },
+
     // https://nuxtjs.org/api/configuration-build#csssourcemap
     cssSourceMap: true,
 
@@ -15,19 +21,6 @@ export default {
     // https://nuxtjs.org/api/configuration-build#extractcss
     extractCSS: true,
 
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(css|vue)$/,
-            chunks: 'all',
-            enforce: true
-          }
-        }
-      }
-    },
-
     // https://nuxtjs.org/api/configuration-build#publicpath
     publicPath: '/assets/',
 
@@ -36,20 +29,20 @@ export default {
       if (isClient) {
         config.devtool = 'source-map'
       }
-    }
+    },
   },
 
   // https://nuxtjs.org/api/configuration-vue-config
   vue: {
     config: {
-      devtools: true
-    }
+      devtools: true,
+    },
   },
 
   // https://nuxtjs.org/api/configuration-head
   head: {
     htmlAttrs: {
-      lang: 'en-US'
+      lang: 'en-US',
     },
 
     title: 'bepsvpt',
@@ -60,39 +53,42 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'bepsvpt welcome site'
-      }
-    ]
+        content: 'bepsvpt welcome site',
+      },
+    ],
   },
 
   // https://nuxtjs.org/api/configuration-modules#-code-buildmodules-code-
   buildModules: [
+    // https://typescript.nuxtjs.org
+    '@nuxt/typescript-build',
+
     // https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
 
     // https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+  ],
 
+  modules: [
     // https://github.com/robcresswell/nuxt-compress
-    'nuxt-compress'
+    'nuxt-compress',
   ],
 
   tailwindcss: {
-    purgeCSSInDev: true
-  },
-
-  purgeCSS: {
-    whitelist: ['__bepsvpt', '__layout']
+    configPath: '~/tailwind.config.js',
+    cssPath: '~/assets/css/tailwind.css',
+    exposeConfig: false,
   },
 
   'nuxt-compress': {
     gzip: {
       minRatio: 1,
-      test: /.*(?<!.br)$/
+      test: /.*(?<!.br)$/,
     },
     brotli: {
       minRatio: 1,
-      test: /.*(?<!.gz)$/
-    }
-  }
+      test: /.*(?<!.gz)$/,
+    },
+  },
 }
