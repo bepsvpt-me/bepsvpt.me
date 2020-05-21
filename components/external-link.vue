@@ -9,8 +9,10 @@
   />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'ExternalLink',
 
   props: {
@@ -26,9 +28,11 @@ export default {
     },
 
     text: {
-      default: () => this.href,
+      default() {
+        return this.href
+      },
       type: String,
     },
   },
-}
+})
 </script>

@@ -4,8 +4,10 @@
   <input v-else readonly size="33" :value="value" @focus="onFocus" />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   props: {
     value: {
       required: true,
@@ -13,21 +15,19 @@ export default {
     },
   },
 
-  data() {
-    return {
-      text: 'Show',
-      visible: false,
-    }
-  },
+  data: () => ({
+    text: 'Show',
+    visible: false,
+  }),
 
   methods: {
-    onFocus({ target }) {
+    onFocus({ target }: FocusEvent) {
       requestAnimationFrame(() => {
-        target.setSelectionRange(0, this.value.length)
+        ;(target as HTMLInputElement).setSelectionRange(0, this.value.length)
       })
     },
   },
-}
+})
 </script>
 
 <style scoped>

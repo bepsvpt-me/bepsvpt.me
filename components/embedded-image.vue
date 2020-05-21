@@ -15,8 +15,10 @@
   </picture>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'EmbeddedImage',
 
   props: {
@@ -52,9 +54,9 @@ export default {
   },
 
   computed: {
-    fallback() {
+    fallback(): string {
       return this.origin || this.src
     },
   },
-}
+})
 </script>

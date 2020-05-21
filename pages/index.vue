@@ -14,10 +14,6 @@
         <h2>Email</h2>
 
         <hidden-info :value="email" />
-
-        <h2 class="mt-2">Riot(Matrix)</h2>
-
-        <hidden-info :value="riot" />
       </div>
     </section>
 
@@ -35,12 +31,13 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import EmbeddedImage from '~/components/embedded-image.vue'
 import HiddenInfo from '~/components/hidden-info.vue'
 import LinksList from '~/components/links-list.vue'
 
-export default {
+export default Vue.extend({
   components: {
     EmbeddedImage,
     HiddenInfo,
@@ -50,8 +47,6 @@ export default {
   data() {
     return {
       email: 'hello@infinitefa.email',
-
-      riot: '@me3rmzhwpfol1rh:matrix.bepsvpt.me:443',
 
       groups: [
         { name: 'Links', key: 'links' },
@@ -116,5 +111,5 @@ export default {
       ],
     }
   },
-}
+})
 </script>

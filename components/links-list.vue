@@ -11,10 +11,11 @@
   </ul>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import ExternalLink from '~/components/external-link.vue'
 
-export default {
+export default Vue.extend({
   name: 'LinksList',
 
   components: {
@@ -27,5 +28,5 @@ export default {
       type: Array,
     },
   },
-}
+})
 </script>
