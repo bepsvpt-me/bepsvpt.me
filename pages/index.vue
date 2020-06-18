@@ -109,7 +109,7 @@ export default Vue.extend({
           description: 'Automatically check release of Homebrew formulas.',
         },
         {
-          to: 'https://github.com/bepsvpt/remote-browser',
+          to: 'https://github.com/bepsvpt-me/remote-browser',
           text: 'Remote Browser',
           description: 'Use WebRTC to stream remote server puppeteer.',
         },
