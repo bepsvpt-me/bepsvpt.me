@@ -1,8 +1,22 @@
 export default {
   mode: 'spa',
 
+  modern: true,
+
   // https://nuxtjs.org/api/configuration-global-name
   globalName: 'bepsvpt',
+
+  loading: false,
+
+  loadingIndicator: false,
+
+  render: {
+    injectScripts: false,
+
+    resourceHints: false,
+
+    csp: true,
+  },
 
   // https://nuxtjs.org/api/configuration-build
   build: {
@@ -12,30 +26,21 @@ export default {
       },
     },
 
-    // https://nuxtjs.org/api/configuration-build#csssourcemap
-    cssSourceMap: true,
-
-    // https://nuxtjs.org/api/configuration-build#devtools
-    devtools: true,
-
-    // https://nuxtjs.org/api/configuration-build#extractcss
-    extractCSS: true,
-
     // https://nuxtjs.org/api/configuration-build#publicpath
     publicPath: '/assets/',
 
-    // https://nuxtjs.org/api/configuration-build#extend
-    extend(config, { isClient }) {
-      if (isClient) {
-        config.devtool = 'source-map'
-      }
+    optimization: {
+      splitChunks: {
+        chunks: 'async',
+      },
     },
-  },
 
-  // https://nuxtjs.org/api/configuration-vue-config
-  vue: {
-    config: {
-      devtools: true,
+    splitChunks: {
+      commons: false,
+      layouts: false,
+      pages: false,
+      runtime: false,
+      vendor: false,
     },
   },
 
@@ -85,10 +90,6 @@ export default {
     gzip: {
       minRatio: 1,
       test: /.*(?<!.br)$/,
-    },
-    brotli: {
-      minRatio: 1,
-      test: /.*(?<!.gz)$/,
     },
   },
 }
