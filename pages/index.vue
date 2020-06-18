@@ -87,6 +87,11 @@ export default Vue.extend({
           text: 'BookWalker Searcher',
           description: 'Taiwan BOOK☆WALKER search tool.',
         },
+        {
+          to: 'https://mc.bepsvpt.me',
+          text: 'Minecraft Server',
+          description: 'My minecraft server info.',
+        },
       ],
 
       packages: [
