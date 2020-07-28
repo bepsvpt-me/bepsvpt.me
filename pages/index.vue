@@ -53,6 +53,7 @@ export default Vue.extend({
         { name: 'Project Sites', key: 'projects' },
         { name: 'Packages', key: 'packages' },
         { name: 'Experiments', key: 'experiments' },
+        { name: 'Archived', key: 'archived' },
       ],
 
       links: [
@@ -82,16 +83,6 @@ export default Vue.extend({
           text: 'YouTuber Statistics',
           description: 'Track YouTuber channel and video statistics.',
         },
-        {
-          to: 'https://bookwalker.bepsvpt.me',
-          text: 'BookWalker Searcher',
-          description: 'Taiwan BOOK☆WALKER search tool.',
-        },
-        {
-          to: 'https://mc.bepsvpt.me',
-          text: 'Minecraft Server',
-          description: 'My minecraft server info.',
-        },
       ],
 
       packages: [
@@ -112,6 +103,19 @@ export default Vue.extend({
           to: 'https://github.com/bepsvpt-me/remote-browser',
           text: 'Remote Browser',
           description: 'Use WebRTC to stream remote server puppeteer.',
+        },
+      ],
+
+      archived: [
+        {
+          to: 'https://github.com/bepsvpt-me/bookwalker',
+          text: 'BookWalker Searcher',
+          description: 'Taiwan BOOK☆WALKER search tool.',
+        },
+        {
+          to: 'https://github.com/bepsvpt-me/minecraft',
+          text: 'Minecraft Server',
+          description: 'My minecraft server info.',
         },
       ],
     }
