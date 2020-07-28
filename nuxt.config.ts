@@ -29,6 +29,9 @@ export default {
     ],
   },
 
+  // https://nuxtjs.org/api/configuration-components
+  components: true,
+
   // https://nuxtjs.org/api/configuration-global-name
   globalName: 'bepsvpt',
 

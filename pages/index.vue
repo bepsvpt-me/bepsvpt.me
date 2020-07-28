@@ -17,8 +17,6 @@
       </div>
     </section>
 
-    <hr class="mt-2" />
-
     <section>
       <article v-for="group in groups" :key="group.key" class="mb-1">
         <h2 v-text="group.name" />
@@ -33,92 +31,81 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import EmbeddedImage from '~/components/embedded-image.vue'
-import HiddenInfo from '~/components/hidden-info.vue'
-import LinksList from '~/components/links-list.vue'
 
 export default Vue.extend({
-  components: {
-    EmbeddedImage,
-    HiddenInfo,
-    LinksList,
-  },
+  data: () => ({
+    email: 'hello@infinitefa.email',
 
-  data() {
-    return {
-      email: 'hello@infinitefa.email',
+    groups: [
+      { name: 'Links', key: 'links' },
+      { name: 'Project Sites', key: 'projects' },
+      { name: 'Packages', key: 'packages' },
+      { name: 'Experiments', key: 'experiments' },
+      { name: 'Archived', key: 'archived' },
+    ],
 
-      groups: [
-        { name: 'Links', key: 'links' },
-        { name: 'Project Sites', key: 'projects' },
-        { name: 'Packages', key: 'packages' },
-        { name: 'Experiments', key: 'experiments' },
-        { name: 'Archived', key: 'archived' },
-      ],
+    links: [
+      {
+        to: 'https://blog.bepsvpt.me',
+        text: 'Blog',
+      },
+      {
+        to: 'https://github.com/bepsvpt',
+        text: 'GitHub',
+      },
+    ],
 
-      links: [
-        {
-          to: 'https://blog.bepsvpt.me',
-          text: 'Blog',
-        },
-        {
-          to: 'https://github.com/bepsvpt',
-          text: 'GitHub',
-        },
-      ],
+    projects: [
+      {
+        to: 'https://ccu.plus',
+        text: 'CCU PLUS',
+        description: 'Course review for National Chung Cheng University.',
+      },
+      {
+        to: 'https://laravel.bepsvpt.me',
+        text: 'Top Laravel Packages',
+        description: ' List top 1,000 downloads Laravel packages.',
+      },
+      {
+        to: 'https://youtuber.bepsvpt.me',
+        text: 'YouTuber Statistics',
+        description: 'Track YouTuber channel and video statistics.',
+      },
+    ],
 
-      projects: [
-        {
-          to: 'https://ccu.plus',
-          text: 'CCU PLUS',
-          description: 'Course review for National Chung Cheng University.',
-        },
-        {
-          to: 'https://laravel.bepsvpt.me',
-          text: 'Top Laravel Packages',
-          description: ' List top 1,000 downloads Laravel packages.',
-        },
-        {
-          to: 'https://youtuber.bepsvpt.me',
-          text: 'YouTuber Statistics',
-          description: 'Track YouTuber channel and video statistics.',
-        },
-      ],
+    packages: [
+      {
+        to: 'https://github.com/bepsvpt/secure-headers',
+        text: 'PHP Secure Headers',
+        description: 'Add security related headers to HTTP response.',
+      },
+    ],
 
-      packages: [
-        {
-          to: 'https://github.com/bepsvpt/secure-headers',
-          text: 'PHP Secure Headers',
-          description: 'Add security related headers to HTTP response.',
-        },
-      ],
+    experiments: [
+      {
+        to: 'https://github.com/bepsvpt/homebrew-updater',
+        text: 'Homebrew Updater',
+        description: 'Automatically check release of Homebrew formulas.',
+      },
+      {
+        to: 'https://github.com/bepsvpt-me/remote-browser',
+        text: 'Remote Browser',
+        description: 'Use WebRTC to stream remote server puppeteer.',
+      },
+    ],
 
-      experiments: [
-        {
-          to: 'https://github.com/bepsvpt/homebrew-updater',
-          text: 'Homebrew Updater',
-          description: 'Automatically check release of Homebrew formulas.',
-        },
-        {
-          to: 'https://github.com/bepsvpt-me/remote-browser',
-          text: 'Remote Browser',
-          description: 'Use WebRTC to stream remote server puppeteer.',
-        },
-      ],
-
-      archived: [
-        {
-          to: 'https://github.com/bepsvpt-me/bookwalker',
-          text: 'BookWalker Searcher',
-          description: 'Taiwan BOOK☆WALKER search tool.',
-        },
-        {
-          to: 'https://github.com/bepsvpt-me/minecraft',
-          text: 'Minecraft Server',
-          description: 'My minecraft server info.',
-        },
-      ],
-    }
-  },
+    archived: [
+      {
+        to: 'https://github.com/bepsvpt-me/bookwalker',
+        text: 'BookWalker Searcher',
+        description: 'Taiwan BOOK☆WALKER search tool.',
+      },
+      {
+        to: 'https://github.com/bepsvpt-me/minecraft',
+        text: 'Minecraft Server',
+        description: 'My minecraft server info.',
+      },
+    ],
+  }),
 })
 </script>
