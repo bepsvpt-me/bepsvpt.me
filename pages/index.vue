@@ -79,6 +79,11 @@ export default Vue.extend({
         text: 'PHP Secure Headers',
         description: 'Add security related headers to HTTP response.',
       },
+      {
+        to: 'https://github.com/bepsvpt/blurhash',
+        text: 'PHP BlurHash',
+        description: 'A PHP implementation of BlurHash.',
+      },
     ],
 
     experiments: [
