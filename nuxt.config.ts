@@ -3,16 +3,16 @@ import { NuxtConfig } from '@nuxt/types'
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
-  // https://nuxtjs.org/api/configuration-mode
-  mode: 'universal',
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-ssr
+  ssr: true,
 
-  // https://nuxtjs.org/api/configuration-modern
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-modern
   modern: !isDev,
 
-  // https://nuxtjs.org/api/configuration-target
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-target
   target: 'static',
 
-  // https://nuxtjs.org/api/configuration-head
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-head
   head: {
     htmlAttrs: { lang: 'en-US' },
 
@@ -29,19 +29,19 @@ export default {
     ],
   },
 
-  // https://nuxtjs.org/api/configuration-components
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-components
   components: true,
 
-  // https://nuxtjs.org/api/configuration-global-name
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-global-name
   globalName: 'bepsvpt',
 
-  // https://nuxtjs.org/api/configuration-loading
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-loading
   loading: false,
 
-  // https://nuxtjs.org/api/configuration-loading-indicator
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-loading-indicator
   loadingIndicator: false,
 
-  // https://nuxtjs.org/api/configuration-modules#-code-buildmodules-code-
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-modules#buildmodules
   buildModules: [
     // https://typescript.nuxtjs.org
     '@nuxt/typescript-build',
