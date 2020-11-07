@@ -66,11 +66,6 @@ export default Vue.extend({
         text: 'Top Laravel Packages',
         description: ' List top 1,000 downloads Laravel packages.',
       },
-      {
-        to: 'https://youtuber.bepsvpt.me',
-        text: 'YouTuber Statistics',
-        description: 'Track YouTuber channel and video statistics.',
-      },
     ],
 
     packages: [
@@ -109,6 +104,11 @@ export default Vue.extend({
         to: 'https://github.com/bepsvpt-me/minecraft',
         text: 'Minecraft Server',
         description: 'My minecraft server info.',
+      },
+      {
+        to: 'https://github.com/bepsvpt-me/youtuber',
+        text: 'YouTuber Statistics',
+        description: 'Track YouTuber channel and video statistics.',
       },
     ],
   }),
